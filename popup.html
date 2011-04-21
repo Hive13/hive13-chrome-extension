@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <script>
+      var bg; // background page
+
+	  onload = setTimeout(init, 0); // workaround for http://crbug.com/24467
+
+      // initialize timeline template
+      function init() {
+        bg = chrome.extension.getBackgroundPage();
+      }
+    </script>
+  </head>
+  <body>
+    <img src="http://shell.hive13.org/webcam1/fullsize.jpg" />
+  </body>
+</html>

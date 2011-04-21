@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <script>
+      var fetchFreq = 30000; // how often we fetch new status (30s)
+      var req; // request object
+	  var isOpen;
+
+      getStatus();
+      setInterval(getStatus, fetchFreq);
+
+      // fetch status from server
+      function getStatus() {
+        req = new XMLHttpRequest();
+        req.open('GET', 'http://www.hive13.org/isOpen/checkStatusJSON.php');
+        req.onload = myProcessStatus;
+        req.send();
+      }
+
+      // process hive status
+      function myProcessStatus() {
+        var res = JSON.parse(req.responseText);
+        isOpen = res.isOpen;
+
+		if ( isOpen == '1' ){
+		  chrome.browserAction.setBadgeText({text: 'open' });
+		  
+		  chrome.browserAction.setBadgeBackgroundColor({ color: [0, 255, 0, 255] });
+		}
+		else{
+		  chrome.browserAction.setBadgeText({text: 'closed' });
+		  
+		  chrome.browserAction.setBadgeBackgroundColor({ color: [255, 0, 0, 255] });
+		}
+      }
+	  
+    </script>
+  </head>
+</html>

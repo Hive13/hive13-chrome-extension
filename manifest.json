@@ -1,0 +1,22 @@
+{
+  "name": "Hive13 Status",
+  "version": "1.2",
+  "description": "checks status of Hive13",
+  "default_locale": "en",
+  
+  "permissions": [
+	"http://www.hive13.org/*"
+  ],
+  
+  "browser_action": {
+      "default_title": "Hive13 Status",
+      "default_icon": "hive13.png",
+	  "popup": "popup.html"
+  },
+  
+  "background_page": "background.html",
+  
+  "icons": { "16": "hive13_16.png",
+             "48": "hive13_48.png",
+			 "128": "hive13_128.png" }
+}
