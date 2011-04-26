@@ -2,7 +2,6 @@
   "name": "Hive13 Status",
   "version": "1.2",
   "description": "checks status of Hive13",
-  "default_locale": "en",
   
   "permissions": [
 	"http://www.hive13.org/*"
